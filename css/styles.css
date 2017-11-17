@@ -1,0 +1,269 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html{
+  display:none;
+}
+ul {
+  list-style-type: none;
+}
+
+body {
+  margin: 10%;
+  font-family: 'Lato', sans-serif;
+  background: #4faedc;
+  color:#ffffff;
+  font-weight: 100;
+}
+
+.month {
+    margin: 0 auto;
+    width: 60%;
+    height:250px;
+    text-align: left;
+    font-family: 'League Script', cursive;
+}
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    font-size: 50px;
+    letter-spacing: 6px;
+}
+.month .left {
+    float: left;
+    padding-top: 0px;
+}
+
+.month .right {
+    float: right;
+    padding-top: 0px;
+}
+.month_name{
+  font-size: 120px;
+  letter-spacing: -1px;
+  font-weight: bold;
+  position: relative;
+  top:80px;
+  left:10px;
+}
+.inner{
+  margin: 0 auto;
+  width: 40%;
+  font-size: 22px;
+}
+.header {
+    margin: 0;
+    /*padding: 10px 0;*/
+}
+
+.header li {
+    display: inline-block;
+    width: 13.3%;
+    text-align: center;
+}
+
+
+.dates {
+    /*padding: 10px 0;*/
+    margin: 0 auto;
+}
+
+.dates li {
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+    width: 13.3%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.dates li::before {
+	color: #fff;
+	content: attr(data-hover);
+	position: absolute;
+	-webkit-transition: opacity 2s, -webkit-transform 2s;
+	transition: opacity 2s, -webkit-transform 2s;
+	transition: transform 2s, opacity 2s;
+	transition: transform 2s, opacity 2s, -webkit-transform 2s;
+}
+.dates li.active ::before {
+  padding: 5px;
+  background: #e6cc0d;
+	color: #fff;
+	content: attr(data-hover);
+	position: absolute;
+	-webkit-transition: opacity 2s, -webkit-transform 2s;
+	transition: opacity 2s, -webkit-transform 2s;
+	transition: transform 2s, opacity 2s;
+	transition: transform 2s, opacity 2s, -webkit-transform 2s;
+}
+.dates li:hover::before,
+.dates li:focus::before {
+	-webkit-transform: scale(8);
+	        transform: scale(8);
+	opacity: 0;
+  cursor: pointer;
+}
+.dates li.acive:hover::before,
+.dates li.active:focus::before {
+	-webkit-transform: scale(8);
+	        transform: scale(8);
+	opacity: 0;
+  cursor: pointer;
+}
+.dates .active{
+    padding: 5px;
+    background: #e6cc0d;
+}
+.task::before{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    content: "•";
+    text-shadow: 10px 0 #fff, -10px 0 #fff;
+    font-size: 0.3em;
+}
+
+/* modal*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 350px; /* below .month section*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.6);
+}
+
+
+.modal_content {
+    position: relative;
+    background-color: #4faedc;
+    margin: 0 auto;
+    width: 30%;
+    height:300px;
+    -webkit-animation-name: modal_popup;
+    -webkit-animation-duration: 2000ms;
+    animation-name: modal_popup;
+    animation-duration: 2000ms
+}
+/*animation for modal*/
+@-webkit-keyframes modal_popup {
+    from {opacity:0}
+    to {opacity:1}
+}
+
+@keyframes modal_popup {
+    from {opacity:0}
+    to {opacity:1}
+}
+/*end of modal animation*/
+
+/*close button*/
+.btn_close {
+    float: left;
+    font-family: 'Lato', sans-serif;!important
+}
+
+.btn_close:hover,
+.btn_close:focus {
+    color: #e6cc0d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal_header {
+    padding: 5%;
+    text-align: center;
+    font-family: 'League Script', cursive;
+    font-size: larger;
+}
+
+.modal_body {
+  padding: 5%;
+  text-align: center;
+}
+
+/*end of modal styles*/
+
+
+
+
+
+
+/* for small screens */
+@media screen and (max-width:1024px) {
+    .header li, .dates li {width: 13.3%;}
+    .month, .inner{
+      width:100%;
+    }
+    .month_name{
+      font-size: inherit;
+      position: inherit;
+    }
+    .month_name::before{
+      content:' ';
+      display: block;
+    }
+    .month{
+      text-align: center;
+    }
+}
+@media screen and (max-width:720px) {
+    .header li, .dates li {width: 13.3%;}
+    .month, .inner{
+      width:100%;
+    }
+    .month_name{
+      font-size: inherit;
+      position: inherit;
+    }
+    .month_name::before{
+      content:' ';
+    }
+    .month{
+      text-align: center;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .header li, .dates li {width: 12.1%;}
+    .dates .active {padding: 2px;}
+    .month, .inner{
+      width:100%;
+    }
+    .month_name{
+      font-size: inherit;
+      position: inherit;
+    }
+    .month_name::before{
+      content:' ';
+    }
+    .month{
+      text-align: center;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .header li, .dates li {width: 11.8%;}
+    .month, .inner{
+      width:100%;
+    }
+    .month_name{
+      font-size: inherit;
+      position: inherit;
+    }
+    .month_name::before{
+      content:' ';
+    }
+    .month{
+      text-align: center;
+    }
+}

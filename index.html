@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendar Table</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100|League+Script" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <!--js code-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/mycode.js"></script>
+</head>
+
+<body>
+  <!--modal-->
+  <div id="cal_modal" class="modal">
+    <!--Modal content-->
+    <div class="modal_content">
+      <div class="modal_header">
+        <span class="btn_close">&times;</span>
+        <h2 class='modal_date'></h2>
+        <h2 class='modal_weekday'></h2>
+      </div>
+      <div class="modal_body">
+        <p>No plans for this date...</p>
+      </div>
+    </div>
+  </div>
+<!--End of modal-->
+
+
+
+
+<div class='arrow-left'></div>
+  <div class="month">
+    <ul>
+      <li class='year'>2017<span class='month_name'>November</span></li>
+      <!--<li class='left'>&#10094;</li>
+      <li class='right'>&#10095;</li>-->
+    </ul>
+  </div>
+<div class='inner'>
+  <ul class='header'>
+    <li>M</li>
+    <li>T</li>
+    <li>W</li>
+    <li>T</li>
+    <li>F</li>
+    <li>S</li>
+    <li>S</li>
+  </ul>
+
+  <ul class="dates">
+    <li data-hover=""></li>
+    <li data-hover=""></li>
+    <li data-hover="1">1</li>
+    <li data-hover="2">2</li>
+    <li data-hover="3">3</li>
+    <li data-hover="4">4</li>
+    <li data-hover="5">5</li>
+    <li data-hover="6">6</li>
+    <li data-hover="7">7</li>
+    <li data-hover="8">8</li>
+    <li data-hover="9">9</li>
+    <li data-hover="10">10</li>
+    <li data-hover="11"><span class="task"></span>11</li>
+    <li data-hover="12">12</li>
+    <li data-hover="13">13</li>
+    <li data-hover="14">14</li>
+    <li  class="active" data-hover="15">15</li>
+    <li data-hover="16">16</li>
+    <li data-hover="17"><span class="task"></span>17</li>
+    <li data-hover="18">18</li>
+    <li data-hover="19">19</li>
+    <li data-hover="20">20</li>
+    <li data-hover="21">21</li>
+    <li data-hover="22">22</li>
+    <li data-hover='23'>23</li>
+    <li data-hover="24">24</li>
+    <li data-hover="25">25</li>
+    <li data-hover="26">26</li>
+    <li data-hover="27">27</li>
+    <li data-hover="28">28</li>
+    <li data-hover="29">29</li>
+    <li data-hover="30">30</li>
+    <li data-hover="31">31</li>
+  </ul>
+</div>
+</body>
+
+</html>
